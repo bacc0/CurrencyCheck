@@ -8,7 +8,7 @@ namespace ClassLibrary1.Properties
         [Test]
         public void DownloadedIsNotEmptyString()
         { 
-            Assert.That(Read.ReadFromWeb("https://api.coinmarketcap.com/v2/listings/"), !Is.EqualTo(string.Empty));
+            Assert.That(Read.ReadFromWeb("https://bacc0.github.io/One.html"), !Is.EqualTo(string.Empty));   // https://api.coinmarketcap.com/v2/listings/
         }
 
         [Test]

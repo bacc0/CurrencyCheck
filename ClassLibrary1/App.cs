@@ -12,33 +12,44 @@ namespace ClassLibrary1
             var currencyDatas = new List<CurrencyData>();
             var iDs = new List<int>();
 
-            var input = "https://api.coinmarketcap.com/v2/listings/";
+            var input = "https://bacc0.github.io/One.html"; // https://api.coinmarketcap.com/v2/listings/
 
             var jsonString = Read.ReadFromWeb(input);
 
-            var jsonObject = JsonConvert.DeserializeObject(jsonString) as JObject;
+        /*
+               var jsonObject = JsonConvert.DeserializeObject(jsonString) as JObject;
+  
+  
+               foreach (var currency in  jsonObject["data"])
+               {
+                    bool containsname = false;
+  
+                   if ((currency as JObject).ContainsKey("name"))
+                        containsname = true;
+  
+                    bool containsName = false;
+                    if ((currency as JObject).ContainsKey("Name"))
+                        containsName = true;
+  
+                    var id = (int)(currency as JObject)["id"];
+                    var name = (string)(currency as JObject)["name"];
+                    var symbol = (string)(currency as JObject)["symbol"];
+                    var websiteSlug = (string)(currency as JObject)["website_slug"];    
+         */
 
-////////////////////////////////////////////
+            var jsonObject2 = JsonConvert.DeserializeObject<CurrencyDataAndMetadata>(jsonString);
 
-            foreach (var currency in jsonObject["data"])
+            foreach (var currency in jsonObject2.data)
             {
-                bool containsname = false;
-
-                if ((currency as JObject).ContainsKey("name"))
-                    containsname = true;
-
-                bool containsName = false;
-                if ((currency as JObject).ContainsKey("Name"))
-                    containsName = true;
-
-                var id = (int) (currency as JObject)["id"];
-                var name = (string) (currency as JObject)["name"];
-                var symbol = (string) (currency as JObject)["symbol"];
-                var websiteSlug = (string) (currency as JObject)["website_slug"];
-
+                var id = currency.Id;
+                var name = currency.Name;
+                var symbol = currency.Symbol;
+                var websiteSlug = currency.Website_slug;
                 if (iDs.Contains(id))
                 {
-                    Console.WriteLine("List contains duplicate values.");
+
+                    throw new ArgumentException(
+                        $"\n---------------------------------------------\nList contains duplicate values. IDs ({id} and {id})\n---------------------------------------------");
                 }
 
                 iDs.Add(id);
@@ -65,9 +76,8 @@ namespace ClassLibrary1
                                   currencyData.Website_slug + "\n");
                 count++;
                 Console.WriteLine("" + count);
-                Console.WriteLine(); }
-
-            var jsonObject2 = JsonConvert.DeserializeObject<CurrencyDataAndMetadata>(jsonString);
+                Console.WriteLine();
+            }
         }
     }
 }
