@@ -1,3 +1,6 @@
+using NUnit.Framework;
+using System.Collections.Generic;
+
 namespace ClassLibrary1
 {
     public class CurrencyData
@@ -6,5 +9,11 @@ namespace ClassLibrary1
         public string Name { get; set; }
         public string Symbol { get; set; }
         public string Website_slug { get; set; }
+    }
+
+    public class CurrencyDataAndMetadata
+    {
+        public List<CurrencyData> data { get; set; }
+        public object metadata { get; set; }
     }
 }

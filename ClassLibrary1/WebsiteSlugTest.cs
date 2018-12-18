@@ -8,6 +8,6 @@ static internal class WebsiteSlug
         {
             throw new ArgumentException($"Symbol can't be Empty String! ");
         }
-        return websiteSlug ;
+        return websiteSlug;
     }
 }

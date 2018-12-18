@@ -1,13 +1,13 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace ClassLibrary1
 {
-   public class Program
+    public class Program
     {
-        static void App()
+        static void Main()
         {
             var currencyDatas = new List<CurrencyData>();
             var iDs = new List<int>();
@@ -16,60 +16,58 @@ namespace ClassLibrary1
 
             var jsonString = Read.ReadFromWeb(input);
 
-            var jsonObject = JsonConvert.DeserializeObject(jsonString);
-///////// PLEASE CHECK THIS
-            var jsonToString = jsonObject.ToString();
-/////////            
-            var splited = jsonToString
-                .Split(new[] {"},", "],", "\": ", ","}
-                    , StringSplitOptions
-                        .RemoveEmptyEntries)
-                .Select(s => s.Trim(new char[] { '"', '\\', '\n', ' ', '\"', '}' }))
-                .ToArray();
+            var jsonObject = JsonConvert.DeserializeObject(jsonString) as JObject;
 
-            var iDsPosition = 2;
-            var namesPosition = 4;
-            var symbolsPosition = 6;
-            var websiteSlugsPosition = 8;
+////////////////////////////////////////////
 
-            for (int i = 1; i < splited.Length; i++)
+            foreach (var currency in jsonObject["data"])
             {
-                if (iDsPosition + 7 > splited.Length)
-                {
-                    break;
-                }
-                
-                var id = int.Parse(splited[iDsPosition]);
+                bool containsname = false;
+
+                if ((currency as JObject).ContainsKey("name"))
+                    containsname = true;
+
+                bool containsName = false;
+                if ((currency as JObject).ContainsKey("Name"))
+                    containsName = true;
+
+                var id = (int) (currency as JObject)["id"];
+                var name = (string) (currency as JObject)["name"];
+                var symbol = (string) (currency as JObject)["symbol"];
+                var websiteSlug = (string) (currency as JObject)["website_slug"];
+
                 if (iDs.Contains(id))
                 {
                     Console.WriteLine("List contains duplicate values.");
                 }
-                
+
                 iDs.Add(id);
-
-                var name = splited[namesPosition];
-                var symbol = splited[symbolsPosition];
-                var websiteSlug = splited[websiteSlugsPosition];
-
-                iDsPosition += 8;
-                namesPosition += 8;
-                symbolsPosition += 8;
-                websiteSlugsPosition += 8;
 
                 Name.NameTest(name);
                 Symbol.SymbolTest(symbol);
                 WebsiteSlug.WebsiteSlugTest(websiteSlug);
-              
-                var currency = new CurrencyData
+
+                var currencys = new CurrencyData
                 {
                     Id = id,
                     Name = name,
                     Symbol = symbol,
                     Website_slug = websiteSlug
                 };
-                
-                currencyDatas.Add(currency);
+
+                currencyDatas.Add(currencys);
             }
+
+            var count = 0;
+            foreach (var currencyData in currencyDatas)
+            {
+                Console.WriteLine(currencyData.Name + "\n" + currencyData.Id + "\n" + currencyData.Symbol + "\n" +
+                                  currencyData.Website_slug + "\n");
+                count++;
+                Console.WriteLine("" + count);
+                Console.WriteLine(); }
+
+            var jsonObject2 = JsonConvert.DeserializeObject<CurrencyDataAndMetadata>(jsonString);
         }
     }
 }
