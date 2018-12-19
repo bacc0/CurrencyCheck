@@ -35,7 +35,6 @@ namespace ClassLibrary1
                         var symbol = (string)(currency as JObject)["symbol"];
                         var websiteSlug = (string)(currency as JObject)["website_slug"];    
 */
-
             var jsonObject2 = JsonConvert.DeserializeObject<CurrencyDataAndMetadata>(jsonString);
 
             foreach (var currency in jsonObject2.data)
@@ -68,6 +67,7 @@ namespace ClassLibrary1
             }
 
             Console.WriteLine();
+
             allCurrencyData = jsonObject2.data;
 
             var num = int.Parse(Console.ReadLine());
