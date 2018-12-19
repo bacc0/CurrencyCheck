@@ -5,6 +5,7 @@
         var readFromWeb = new System.Net
                 .WebClient()
             .DownloadString(input);
+
         return readFromWeb;
     }
 }

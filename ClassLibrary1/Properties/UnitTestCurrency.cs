@@ -16,7 +16,7 @@ namespace ClassLibrary1.Properties
         {
             Assert.Multiple(() =>
             {
-                Assert.That(Name.NameTest("Bitcoin"), !Is.EqualTo(""));
+                Assert.That(Name.NameTest("Bitcoin", 1), !Is.EqualTo(""));
             });
         }
     
@@ -25,9 +25,9 @@ namespace ClassLibrary1.Properties
         {
             Assert.Multiple(() =>
             {
-                Assert.That(Symbol.SymbolTest("BTC"),!Is.EqualTo(""));
-//                Assert.That(Symbol.SymbolTest(""),!Is.EqualTo(""));
-            });
+                Assert.That(Symbol.SymbolTest("BTC", 1),!Is.EqualTo(""));
+            //                Assert.That(Symbol.SymbolTest("", 2)),!Is.EqualTo(""));
+        });
         } 
     
         [Test]
@@ -35,9 +35,8 @@ namespace ClassLibrary1.Properties
         {
             Assert.Multiple(() =>
             {
-                Assert.That(WebsiteSlug.WebsiteSlugTest("bitcoin"),!Is.EqualTo(""));
-                Assert.That(WebsiteSlug.WebsiteSlugTest("litecoin"),!Is.EqualTo(""));
-//                Assert.That(WebsiteSlug.WebsiteSlugTest(""),!Is.EqualTo(""));
+                Assert.That(WebsiteSlug.WebsiteSlugTest("bitcoin", 1),!Is.EqualTo(""));
+//                Assert.That(WebsiteSlug.WebsiteSlugTest("", 3),!Is.EqualTo(""));
             }); 
         } 
     }
