@@ -11,6 +11,7 @@ namespace ClassLibrary1
         static void Main()
         {
             var allCurrencyData = new List<CurrencyData>();
+
             var iDs = new List<int>();
 
             var input = "https://bacc0.github.io/One.html"; // https://api.coinmarketcap.com/v2/listings/

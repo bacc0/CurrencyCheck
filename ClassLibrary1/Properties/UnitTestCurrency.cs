@@ -19,7 +19,8 @@ namespace ClassLibrary1.Properties
                 Assert.That(Name.NameTest("Bitcoin", 1), !Is.EqualTo(""));
             });
         }
-    
+
+
         [Test]
         public void SymbolIsNotEmptyString()
         {
