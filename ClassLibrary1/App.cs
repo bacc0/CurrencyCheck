@@ -14,7 +14,8 @@ namespace ClassLibrary1
 
             var iDs = new List<int>();
 
-            var input = "https://bacc0.github.io/One.html"; // https://api.coinmarketcap.com/v2/listings/
+            var input = "https://bacc0.github.io/One.html"; 
+            // https://api.coinmarketcap.com/v2/listings/
 
             var jsonString = Read.ReadFromWeb(input);
  /*
@@ -50,7 +51,8 @@ namespace ClassLibrary1
                 if (iDs.Contains(id))
                 {
                     throw new ArgumentException(
-                        $"\n---------------------------------------------\nList contains duplicate values. With ID ({id})\n---------------------------------------------");
+                        $"\n---------------------------------------------\nList contains duplicate values. " +
+                        $"With ID ({id})\n---------------------------------------------");
                 }
                 iDs.Add(id);
 
@@ -66,7 +68,6 @@ namespace ClassLibrary1
                     Website_slug = websiteSlug
                 };
                 currencyDatas.Add(currencys);
-*/
             }
 
             Console.WriteLine();
