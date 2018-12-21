@@ -1,4 +1,4 @@
-﻿static internal class Read
+static internal class Read
 {
     public static string ReadFromWeb(string input)
     {
