@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using Newtonsoft.Json;
-using Xunit.Abstractions;
-
 
 namespace ClassLibrary1
 {
@@ -10,25 +6,27 @@ namespace ClassLibrary1
     {
         static void Main()
         {
-            var iDs = new List<int>();
-
             var input = "https://bacc0.github.io/One.html"; //     https://api.coinmarketcap.com/v2/listings/
 
             var jsonString = Read.ReadFromWeb(input);
 
-            var jsonObject = JsonConvert.DeserializeObject<CurrencyDataAndMetadata>(jsonString);
+            Console.WriteLine("Please choose option! " +
+                              "\n To check Fields is EMPTY STRINGS or have a duplicate IDs, press (1) " +
+                              "\n To check Fields is with Correct Names, press (2)" +
+                              "\n For EXIT, press (3)");
+            var option = 0;
 
-            foreach (var currency in jsonObject.data)
+            while (option != 3)
             {
-                var id = currency.Id;
+                option = int.Parse(Console.ReadLine());
 
-                Ids.IdsTest(iDs, id);
-                Name.NameTest(currency.Name, id);
-                Symbol.SymbolTest(currency.Symbol, id);
-                WebsiteSlug.WebsiteSlugTest(currency.Website_slug, id);
+                if (option == 1)
+                    CheckFieldsIsEmptyStrings_Or_DuplicateIds(jsonString);
+
+                if (option == 2)
+                    CheckFieldsIsWithCorrectNames(jsonString);
             }
-
-            TestMethod(jsonObject.data);
+                //TestMethod(jsonObject.data); 
         }
     }
 }

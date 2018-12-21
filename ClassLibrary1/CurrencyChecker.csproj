@@ -63,6 +63,8 @@
     <Compile Include="CurrencyData.cs" />
     <Compile Include="IdsTest.cs" />
     <Compile Include="NameTest.cs" />
+    <Compile Include="CheckFieldsIsWithCorrectNames.cs" />
+    <Compile Include="Program.CheckFieldsIsEmptyStrings.cs" />
     <Compile Include="Program.TestMethod.cs" />
     <Compile Include="ReadFromWeb.cs" />
     <Compile Include="SymbolTest.cs" />

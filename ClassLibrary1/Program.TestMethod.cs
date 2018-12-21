@@ -25,7 +25,6 @@ namespace ClassLibrary1
                     break;
                 }
             }
-
             if (idDoesExist)
             {
                 Console.WriteLine($"The ID ({num}) does not exist in the current context!\n");
