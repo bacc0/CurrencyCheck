@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 
 namespace ClassLibrary1
@@ -39,8 +38,6 @@ namespace ClassLibrary1
 
             var jsonObject2 = JsonConvert.DeserializeObject<CurrencyDataAndMetadata>(jsonString);
 
-
-
             foreach (var currency in jsonObject2.data)
             {
                 var id = currency.Id;
@@ -60,7 +57,6 @@ namespace ClassLibrary1
                 Symbol.SymbolTest(symbol, id);
                 WebsiteSlug.WebsiteSlugTest(websiteSlug, id);
 
-            
 //                var currencys = new CurrencyData
 //                {
 //                    Id = id,
