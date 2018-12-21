@@ -10,7 +10,7 @@ namespace ClassLibrary1
     {
         static void Main()
         {
-            var allCurrencyData = new List<CurrencyData>();
+//            var allCurrencyData = new List<CurrencyData>();
 
             var iDs = new List<int>();
 
@@ -73,7 +73,7 @@ namespace ClassLibrary1
             }
             Console.WriteLine();
 
-                //  allCurrencyData = jsonObject2.data;
+//                  allCurrencyData = jsonObject2.data;
 
             var num = int.Parse(Console.ReadLine());
 
