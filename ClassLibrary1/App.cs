@@ -24,7 +24,8 @@ namespace ClassLibrary1
                 if (iDs.Contains(id))
                 {
                     throw new ArgumentException(
-                        $"List contains duplicate values. With (ID's: {id})\n---------------------------------------------");
+                        $"List contains duplicate values. With (ID's: {id})" + 
+                         "\n---------------------------------------------");
                 }
                 iDs.Add(id);
 
