@@ -16,9 +16,7 @@ namespace ClassLibrary1
             var input = "https://bacc0.github.io/One.html"; //     https://api.coinmarketcap.com/v2/listings/
 
             var jsonString = Read.ReadFromWeb(input);
-
-            var jsonObject2 = JsonConvert.DeserializeObject<CurrencyDataAndMetadata>(jsonString);
-
+            
             var jsonObject = JsonConvert.DeserializeObject<CurrencyDataAndMetadata>(jsonString);
 
 
