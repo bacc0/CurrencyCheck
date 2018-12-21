@@ -17,6 +17,7 @@ namespace ClassLibrary1
 
             var jsonString = Read.ReadFromWeb(input);
 
+<<<<<<< HEAD
 //                 var jsonObject = JsonConvert.DeserializeObject(jsonString) as JObject;
 //      
 //                   foreach (var currency in  jsonObject["data"])
@@ -36,8 +37,11 @@ namespace ClassLibrary1
 //                        var websiteSlug = (string)(currency as JObject)["website_slug"];    
 
             var jsonObject2 = JsonConvert.DeserializeObject<CurrencyDataAndMetadata>(jsonString);
+=======
+            var jsonObject = JsonConvert.DeserializeObject<CurrencyDataAndMetadata>(jsonString);
+>>>>>>> ad7a5cd853ab031266e3ef28d5efef47d9168d8c
 
-            foreach (var currency in jsonObject2.data)
+            foreach (var currency in jsonObject.data)
             {
 //                var name = currency.Name;
 //                var symbol = currency.Symbol;
@@ -45,6 +49,7 @@ namespace ClassLibrary1
 
                 var id = currency.Id;
 
+<<<<<<< HEAD
                 //                if (iDs.Contains(id))
                 //                {
                 //                    throw new ArgumentException(
@@ -57,6 +62,15 @@ namespace ClassLibrary1
 
                 Ids.iDsTest(iDs, id);
 
+=======
+                if (iDs.Contains(id))
+                {
+                    throw new ArgumentException(
+                        $"List contains duplicate values. With (ID's: {id})" + 
+                         "\n---------------------------------------------");
+                }
+                iDs.Add(id);
+>>>>>>> ad7a5cd853ab031266e3ef28d5efef47d9168d8c
 
                 Name.NameTest(currency.Name, id);
                 Symbol.SymbolTest(currency.Symbol, id);
