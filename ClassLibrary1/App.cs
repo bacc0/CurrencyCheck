@@ -26,7 +26,6 @@ namespace ClassLibrary1
                     throw new ArgumentException(
                         $"List contains duplicate values. With (ID's: {id})\n---------------------------------------------");
                 }
-
                 iDs.Add(id);
 
                 Name.NameTest(currency.Name, id);
