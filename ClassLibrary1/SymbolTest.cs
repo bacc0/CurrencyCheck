@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 static internal class Symbol
 {
     public static string SymbolTest(string symbol, int id)

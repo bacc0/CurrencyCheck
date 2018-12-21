@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 static internal class WebsiteSlug
 {
     public static string WebsiteSlugTest(string websiteSlug, int id)
