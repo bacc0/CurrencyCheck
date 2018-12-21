@@ -19,7 +19,6 @@ namespace ClassLibrary1
             
             var jsonObject = JsonConvert.DeserializeObject<CurrencyDataAndMetadata>(jsonString);
 
-
             foreach (var currency in jsonObject.data)
             {
                 var id = currency.Id;
