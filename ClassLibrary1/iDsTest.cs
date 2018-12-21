@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 static internal class Ids
 {
-    public static List<int> iDsTest(List<int> iDs, int id)
+    public static List<int> IdsTest(List<int> iDs, int id)
     {
         if (iDs.Contains(id))
         {
