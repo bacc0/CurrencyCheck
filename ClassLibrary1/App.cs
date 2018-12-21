@@ -40,10 +40,11 @@ namespace ClassLibrary1
 
             foreach (var currency in jsonObject2.data)
             {
+//                var name = currency.Name;
+//                var symbol = currency.Symbol;
+//                var websiteSlug = currency.Website_slug;
+
                 var id = currency.Id;
-                var name = currency.Name;
-                var symbol = currency.Symbol;
-                var websiteSlug = currency.Website_slug;
 
                 if (iDs.Contains(id))
                 {
@@ -53,9 +54,9 @@ namespace ClassLibrary1
                 }
                 iDs.Add(id);
 
-                Name.NameTest(name, id);
-                Symbol.SymbolTest(symbol, id);
-                WebsiteSlug.WebsiteSlugTest(websiteSlug, id);
+                Name.NameTest(currency.Name, id);
+                Symbol.SymbolTest(currency.Symbol, id);
+                WebsiteSlug.WebsiteSlugTest(currency.Website_slug, id);
 
 //                var currencys = new CurrencyData
 //                {
@@ -64,7 +65,7 @@ namespace ClassLibrary1
 //                    Symbol = symbol,
 //                    Website_slug = websiteSlug
 //                };
-//
+
 //                allCurrencyData.Add(currencys);
             }
             Console.WriteLine();
@@ -95,8 +96,7 @@ namespace ClassLibrary1
             {
                 Console.WriteLine($"The ID ({num}) does not exist in the current context!\n");
             }
-
-            Console.WriteLine($" Total type of currencys ({allCurrencyData.Count}) \n-------------------------------");
+            Console.WriteLine($" Total type of currencys ({jsonObject2.data.Count}) \n-------------------------------");
         }
     }
 }
