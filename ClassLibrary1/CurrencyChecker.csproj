@@ -61,7 +61,7 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="CurrencyData.cs" />
-    <Compile Include="iDsTest.cs" />
+    <Compile Include="IdsTest.cs" />
     <Compile Include="NameTest.cs" />
     <Compile Include="ReadFromWeb.cs" />
     <Compile Include="SymbolTest.cs" />
