@@ -15,7 +15,7 @@ namespace ClassLibrary1
 
             var jsonString = Read.ReadFromWeb(input);
 
-            var jsonObject2 = JsonConvert.DeserializeObject<CurrencyDataAndMetadata>(jsonString);
+            var jsonObject = JsonConvert.DeserializeObject<CurrencyDataAndMetadata>(jsonString);
 
             foreach (var currency in jsonObject2.data)
             {
@@ -24,8 +24,7 @@ namespace ClassLibrary1
                 if (iDs.Contains(id))
                 {
                     throw new ArgumentException(
-                        $"\n---------------------------------------------\nList contains duplicate values. " +
-                        $"With ID ({id})\n---------------------------------------------");
+                        $"List contains duplicate values. With (ID's: {id})\n---------------------------------------------");
                 }
 
                 iDs.Add(id);
