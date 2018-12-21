@@ -19,7 +19,7 @@ namespace ClassLibrary1
 
             var jsonString = Read.ReadFromWeb(input);
 
-                  var jsonObject = JsonConvert.DeserializeObject(jsonString) as JObject;
+//                 var jsonObject = JsonConvert.DeserializeObject(jsonString) as JObject;
 //      
 //                   foreach (var currency in  jsonObject["data"])
 //                   {
