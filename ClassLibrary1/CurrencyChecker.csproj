@@ -63,6 +63,7 @@
     <Compile Include="CurrencyData.cs" />
     <Compile Include="IdsTest.cs" />
     <Compile Include="NameTest.cs" />
+    <Compile Include="Program.TestMethod.cs" />
     <Compile Include="ReadFromWeb.cs" />
     <Compile Include="SymbolTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
