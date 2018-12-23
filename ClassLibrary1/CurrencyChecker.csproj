@@ -64,7 +64,7 @@
     <Compile Include="IdsTest.cs" />
     <Compile Include="NameTest.cs" />
     <Compile Include="CheckFieldsIsWithCorrectNames.cs" />
-    <Compile Include="Program.CheckFieldsIsEmptyStrings.cs" />
+    <Compile Include="Program.CheckFieldsIsEmptyStrings_Or_DuplicateIds.cs" />
     <Compile Include="Program.TestMethod.cs" />
     <Compile Include="ReadFromWeb.cs" />
     <Compile Include="SymbolTest.cs" />
