@@ -9,6 +9,7 @@ static internal class Name
             isCorrect = false;
             throw new ArgumentException($"\n---------------------------------------------\n \"Name\" can't be Empty String! With ID ({id}) \n---------------------------------------------");
         }
+
         return Tuple.Create(name, isCorrect);
     }
 }
