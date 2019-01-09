@@ -14,6 +14,6 @@ namespace ClassLibrary1
     public class CurrencyDataAndMetadata
     {
         public List<CurrencyData> data { get; set; }
-        public object metadata { get; set; }
+//        public object metadata { get; set; }
     }
 }

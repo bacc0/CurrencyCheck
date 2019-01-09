@@ -37,9 +37,19 @@ namespace ClassLibrary1.Properties
         {
             Assert.Multiple(() =>
             {
-                Assert.That(WebsiteSlug.WebsiteSlugTest("bitcoin", 1),!Is.EqualTo(""));
-//                Assert.That(WebsiteSlug.WebsiteSlugTest("", 3),!Is.EqualTo(""));
+              Assert.That(WebsiteSlug.WebsiteSlugTest("bitcoin", 1),!Is.EqualTo(""));
+ //            Assert.That(WebsiteSlug.WebsiteSlugTest("", 3),!Is.EqualTo(""));
             }); 
-        } 
+        }
+
+        [Test]
+        public void CheckFieldsIsWithCorrectNames()
+        {
+            var input = "https://bacc0.github.io/One.html";    //     https://api.coinmarketcap.com/v2/listings/
+           
+
+            Assert.That(Program.CheckFieldsIsWithCorrectNames(Read.ReadFromWeb(input)) , Is.EqualTo((false)));
+        }
+
     }
 }
