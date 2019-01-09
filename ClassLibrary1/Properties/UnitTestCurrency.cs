@@ -17,17 +17,15 @@ namespace ClassLibrary1.Properties
         [Test]
         public void CheckFieldsIsEmptyStrings_Or_DuplicateIds()
         {
-            var input = "https://bacc0.github.io/One.html";    //     https://api.coinmarketcap.com/v2/listings/
-            var jsonString = Read.ReadFromWeb(input);
+            var jsonString = Read.ReadFromWeb("https://bacc0.github.io/One.html"); //     https://api.coinmarketcap.com/v2/listings/
 
             Assert.That(Program.CheckFieldsIsEmptyStrings_Or_DuplicateIds(jsonString), Is.EqualTo((true)));
         }
 
         [Test]
         public void CheckFieldsIsWithCorrectNames()
-        {
-            var input = "https://bacc0.github.io/One.html";    //     https://api.coinmarketcap.com/v2/listings/
-            var jsonString = Read.ReadFromWeb(input);
+        { 
+            var jsonString = Read.ReadFromWeb("https://bacc0.github.io/One.html"); //     https://api.coinmarketcap.com/v2/listings/
 
             Assert.That(Program.CheckFieldsIsWithCorrectNames(jsonString) , Is.EqualTo((true)));
         }
