@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 
 
@@ -8,19 +9,43 @@ namespace ClassLibrary1.Properties
     {
         [Test]
         public void DownloadedIsNotEmptyString()
-        { 
-            Assert.That(Read.ReadFromWeb("https://bacc0.github.io/One.html"), !Is.EqualTo(string.Empty));   // https://api.coinmarketcap.com/v2/listings/
+        {
+            var input = "https://bacc0.github.io/One.html";    //     https://api.coinmarketcap.com/v2/listings/
+
+            Assert.That(Read.ReadFromWeb(input), !Is.EqualTo(string.Empty));
         }
+
+        [Test]
+        public void CheckFieldsIsEmptyStrings_Or_DuplicateIds()
+        {
+            var input = "https://bacc0.github.io/One.html";    //     https://api.coinmarketcap.com/v2/listings/
+            var jsonString = Read.ReadFromWeb(input);
+
+            Assert.That(Program.CheckFieldsIsEmptyStrings_Or_DuplicateIds(jsonString), Is.EqualTo((true)));
+        }
+
+        [Test]
+        public void CheckFieldsIsWithCorrectNames()
+        {
+            var input = "https://bacc0.github.io/One.html";    //     https://api.coinmarketcap.com/v2/listings/
+            var jsonString = Read.ReadFromWeb(input);
+
+            Assert.That(Program.CheckFieldsIsWithCorrectNames(jsonString) , Is.EqualTo((true)));
+        }
+
+       
+
+        /*
 
         [Test]
         public void NameIsNotEmptyString()
         {
             Assert.Multiple(() =>
             {
+                
                 Assert.That(Name.NameTest("Bitcoin", 1), !Is.EqualTo(""));
             });
         }
-
 
         [Test]
         public void SymbolIsNotEmptyString()
@@ -41,15 +66,6 @@ namespace ClassLibrary1.Properties
  //            Assert.That(WebsiteSlug.WebsiteSlugTest("", 3),!Is.EqualTo(""));
             }); 
         }
-
-        [Test]
-        public void CheckFieldsIsWithCorrectNames()
-        {
-            var input = "https://bacc0.github.io/One.html";    //     https://api.coinmarketcap.com/v2/listings/
-           
-
-            Assert.That(Program.CheckFieldsIsWithCorrectNames(Read.ReadFromWeb(input)) , Is.EqualTo((false)));
-        }
-
+*/
     }
 }

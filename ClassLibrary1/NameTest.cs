@@ -1,15 +1,14 @@
 using System;
 
-
-
 static internal class Name
 {
-    public static string NameTest(string name, int id)
+    public static Tuple<string, bool> NameTest(string name, int id, bool isCorrect)
     {
         if (name == String.Empty)
         {
+            isCorrect = false;
             throw new ArgumentException($"\n---------------------------------------------\n \"Name\" can't be Empty String! With ID ({id}) \n---------------------------------------------");
         }
-        return name ;
+        return Tuple.Create(name, isCorrect);
     }
 }

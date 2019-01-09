@@ -6,9 +6,11 @@ namespace ClassLibrary1
 {
     public partial class Program
     {
-        private static void CheckFieldsIsEmptyStrings_Or_DuplicateIds(string jsonString)
+        public static bool CheckFieldsIsEmptyStrings_Or_DuplicateIds(string jsonString)
         {
             var jsonObject = JsonConvert.DeserializeObject<CurrencyDataAndMetadata>(jsonString);
+
+            var isCorrect = true;
 
             var iDs = new List<int>();
 
@@ -16,13 +18,16 @@ namespace ClassLibrary1
             {
                 var id = currency.Id;
 
-                Ids.IdsTest(iDs, id);
-                Name.NameTest(currency.Name, id);
-                Symbol.SymbolTest(currency.Symbol, id);
-                WebsiteSlug.WebsiteSlugTest(currency.Website_slug, id);
+                Ids.IdsTest(iDs, id, isCorrect);
+                Name.NameTest(currency.Name, id, isCorrect);
+                Symbol.SymbolTest(currency.Symbol, id, isCorrect);
+                WebsiteSlug.WebsiteSlugTest(currency.Website_slug, id, isCorrect);
+
             }
 
             Console.WriteLine("It's Correct!");
+
+            return isCorrect;
         }
     }
 }
