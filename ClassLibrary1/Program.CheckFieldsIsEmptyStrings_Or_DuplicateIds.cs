@@ -22,9 +22,7 @@ namespace ClassLibrary1
                 Name.NameTest(currency.Name, id, isCorrect);
                 Symbol.SymbolTest(currency.Symbol, id, isCorrect);
                 WebsiteSlug.WebsiteSlugTest(currency.Website_slug, id, isCorrect);
-
             }
-
             Console.WriteLine("It's Correct!");
 
             return isCorrect;
