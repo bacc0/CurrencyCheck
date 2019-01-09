@@ -31,40 +31,5 @@ namespace ClassLibrary1.Properties
 
             Assert.That(Program.CheckFieldsIsWithCorrectNames(jsonString) , Is.EqualTo((true)));
         }
-
-       
-
-        /*
-
-        [Test]
-        public void NameIsNotEmptyString()
-        {
-            Assert.Multiple(() =>
-            {
-                
-                Assert.That(Name.NameTest("Bitcoin", 1), !Is.EqualTo(""));
-            });
-        }
-
-        [Test]
-        public void SymbolIsNotEmptyString()
-        {
-            Assert.Multiple(() =>
-            {
-                Assert.That(Symbol.SymbolTest("BTC", 1),!Is.EqualTo(""));
-            //                Assert.That(Symbol.SymbolTest("", 2)),!Is.EqualTo(""));
-        });
-        } 
-    
-        [Test]
-        public void WebsiteSlugIsNotEmptyString()
-        {
-            Assert.Multiple(() =>
-            {
-              Assert.That(WebsiteSlug.WebsiteSlugTest("bitcoin", 1),!Is.EqualTo(""));
- //            Assert.That(WebsiteSlug.WebsiteSlugTest("", 3),!Is.EqualTo(""));
-            }); 
-        }
-*/
     }
 }
